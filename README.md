@@ -1,7 +1,8 @@
 <div align="center">
   <h1><b>AdonisJS QueueDash</b></h1>
 
-  AdonisJS adapter for [queuedash](https://github.com/alexbudure/queuedash)
+AdonisJS adapter for [queuedash](https://github.com/alexbudure/queuedash)
+
 </div>
 
 <p align="center">
@@ -42,7 +43,7 @@ Route.queuedash('/queuedash', {
 			type: 'bullmq' as const, // bullmq, bull, bee
 		},
 	],
-}).middleware(['auth'])
+}).middleware(['auth']);
 ```
 
 using [@rlanz/bull-queue](https://github.com/RomainLanz/adonis-bull-queue)
@@ -66,3 +67,24 @@ Route.queuedash('/queues', {
 	queues,
 });
 ```
+## Troubleshooting Build Errors
+
+If you encounter an error during the build process, it may be resolved by installing TypeScript version 5. You can do this using either npm or yarn as follows:
+
+For npm:
+
+```bash
+npm install typescript@5
+```
+
+For yarn:
+
+```bash
+yarn add typescript@5
+```
+
+This specifies the installation of TypeScript version 5 as a development dependency, which should align with your project's requirements.
+
+## License
+
+Published under [MIT License](./LICENSE.md).
