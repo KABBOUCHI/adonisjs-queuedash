@@ -33,7 +33,8 @@ basic usage
 
 import { Queue } from 'bullmq';
 
-Route.queuedash('/queues', {
+// http://127.0.0.1:3333/queuedash
+Route.queuedash('/queuedash', {
 	queues: [
 		{
 			queue: new Queue('report-queue'),
@@ -41,7 +42,7 @@ Route.queuedash('/queues', {
 			type: 'bullmq' as const, // bullmq, bull, bee
 		},
 	],
-});
+}).middleware(['auth'])
 ```
 
 using [@rlanz/bull-queue](https://github.com/RomainLanz/adonis-bull-queue)
@@ -60,6 +61,7 @@ const queues = queueNames.map((queueName) => ({
 	type: 'bullmq' as const,
 }));
 
+// http://127.0.0.1:3333/queues
 Route.queuedash('/queues', {
 	queues,
 });
